@@ -1,0 +1,14 @@
+{
+  "name": "contacts-cse-341",
+  "version": "1.0.0",
+  "description": "week 01",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ezequiel",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

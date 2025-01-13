@@ -24,7 +24,7 @@ const getDatabase = () => {
   if (!database) {
     throw new Error("Database is not initialized");
   }
-  return database.db();
+  return database;
 };
 
 module.exports = { intDb, getDatabase };

@@ -1,8 +1,10 @@
 const mongodb = require("../data/database");
 const ObjetId = require("mongodb").ObjectId;
 
+// in collection we add the specific collection we want to use
+// notice that we limit the find to 5 documents
 const getAll = async (req, res) => {
-  const result = await mongodb.getDatabase().db().collection("users").find();
+  const result = await mongodb.getDatabase().db().collection("listingsAndReviews").find().limit(5);
   result.toArray().then((users) => {
     res.setHeader("Content-Type", "application/json");
     res.status(200).json(users);

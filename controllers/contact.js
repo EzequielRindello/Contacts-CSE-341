@@ -32,8 +32,9 @@ const getSingle = async (req, res) => {
 const addContact = async (req, res) => {
   //#swagger.tags = ['Contacts']
   const newContact = {
-    firstName: req.body.firstName, // Corregido
+    firstName: req.body.firstName,
     lastName: req.body.lastName,
+    email : req.body.email,
     favouriteColor: req.body.favouriteColor,
     birthday: req.body.birthday,
   };
@@ -61,6 +62,7 @@ const updateContact = async (req, res) => {
   const updatedContact = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
+    email : req.body.email,
     favouriteColor: req.body.favouriteColor,
     birthday: req.body.birthday,
   };

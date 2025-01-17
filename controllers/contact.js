@@ -5,6 +5,7 @@ const ObjetId = require("mongodb").ObjectId;
 // notice that we limit the find to 5 documents
 // GET method
 const getAll = async (req, res) => {
+  //#swagger.tags = ['Contacts']
   const result = await mongodb.getDatabase().db().collection("contacts").find();
   result.toArray().then((users) => {
     res.setHeader("Content-Type", "application/json");
@@ -14,6 +15,7 @@ const getAll = async (req, res) => {
 
 // GET method (single contact)
 const getSingle = async (req, res) => {
+  //#swagger.tags = ['Contacts']
   const userId = new ObjetId(req.params.id);
   const result = await mongodb
     .getDatabase()
@@ -28,6 +30,7 @@ const getSingle = async (req, res) => {
 
 // POST method
 const addContact = async (req, res) => {
+  //#swagger.tags = ['Contacts']
   const newContact = {
     firstName: req.body.firstName, // Corregido
     lastName: req.body.lastName,
@@ -53,6 +56,7 @@ const addContact = async (req, res) => {
 
 // PUT method
 const updateContact = async (req, res) => {
+  //#swagger.tags = ['Contacts']
   const userId = new ObjetId(req.params.id);
   const updatedContact = {
     firstName: req.body.firstName,
@@ -74,6 +78,7 @@ const updateContact = async (req, res) => {
 
 // DELETE method
 const deleteContact = async (req, res) => {
+  //#swagger.tags = ['Contacts']
   const userId = new ObjetId(req.params.id);
   const result = await mongodb
     .getDatabase()

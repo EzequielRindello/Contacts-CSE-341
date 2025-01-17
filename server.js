@@ -2,9 +2,11 @@ const express = require("express");
 const mongodb = require("./data/database.js");
 const app = express();
 const port = 3000;
+const bodyParser = require("body-parser");
 
-
+app.use(bodyParser.json());
 app.use("/", require("./routes/index.js"));
+
 
 mongodb.intDb((err) => {
   if (err) {

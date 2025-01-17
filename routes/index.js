@@ -1,10 +1,10 @@
 const routes = require('express').Router();
 
 routes.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.send('restful api for contacts');
 });
 
-routes.use('/users',require('./users'));
+routes.use('/contacts',require('./contacts'));
 
 
 module.exports = routes;
